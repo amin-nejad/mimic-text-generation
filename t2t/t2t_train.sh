@@ -7,11 +7,11 @@ BASE=$HOME/project # change this as necessary
 PROBLEM=mimic_discharge_summaries
 MODEL=transformer
 HPARAMS=transformer_base
-DATA_DIR=$BASE/data/t2t/data
-TRAIN_DIR=$BASE/data/t2t/output
+DATA_DIR=$BASE/data/t2t/full_context/data
+TRAIN_DIR=$BASE/data/t2t/full_context/output
 USR_DIR=$BASE/t2t
 
-~/anaconda3/envs/tf/bin/t2t-trainer \
+nohup t2t-trainer \
     --data_dir=$DATA_DIR \
     --problem=$PROBLEM \
     --model=$MODEL \
@@ -19,5 +19,8 @@ USR_DIR=$BASE/t2t
     --hparams="max_length=10000,max_target_seq_length=512,max_input_seq_length=512" \
     --output_dir=$TRAIN_DIR \
     --t2t_usr_dir=$USR_DIR \
-    --train_steps=400000 \
-    --eval_steps=1000
+    --train_steps=4500 \
+    --eval_steps=100 \
+    --local_eval_frequency=250 \
+    --train_steps=5000 \
+    --worker_gpu=4 &

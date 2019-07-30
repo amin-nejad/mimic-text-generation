@@ -1,18 +1,8 @@
-#@title Run this only once - Sets up TF Eager execution.
-
 import tensorflow as tf
-
-# Enable Eager execution - useful for seeing the generated data.
 tf.enable_eager_execution()
-#@title Setting a random seed.
-
 from tensor2tensor.utils import trainer_lib
-
-# Set a seed so that we have deterministic outputs.
 RANDOM_SEED = 301
 trainer_lib.set_random_seed(RANDOM_SEED)
-
-
 from tensor2tensor.data_generators import problem
 from tensor2tensor.data_generators import text_problems
 from tensor2tensor.utils import registry
