@@ -1,5 +1,5 @@
 import tensorflow as tf
-tf.enable_eager_execution()
+#tf.enable_eager_execution()
 from tensor2tensor.utils import trainer_lib
 RANDOM_SEED = 301
 trainer_lib.set_random_seed(RANDOM_SEED)
