@@ -23,7 +23,6 @@ do
         --output_dir=$TRAIN_DIR \
         --t2t_usr_dir=$USR_DIR \
         --train_steps=5000 \
-        --local_eval_frequency=500 \
         --eval_steps=50 \
         --worker_gpu=4 &
 done
