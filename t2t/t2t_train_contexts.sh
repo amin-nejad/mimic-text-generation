@@ -8,13 +8,14 @@ MODEL=transformer
 HPARAMS=transformer_base
 USR_DIR=$BASE/t2t
 
-for i in {h,h-gae,h-gae-d,h-gae-p,h-gae-d-p,h-gae-d-p-m,h-gae-d-p-m-t,h-gae-d-p-m-l}
+#for i in {h,h-gae,h-gae-d,h-gae-p,h-gae-d-p,h-gae-d-p-m,h-gae-d-p-m-t,h-gae-d-p-m-l}
+for i in {h,h-gae-d-p-m-l}
 do
 
     DATA_DIR=$BASE/data/t2t_experiments/other_contexts/$i/data
     TRAIN_DIR=$BASE/data/t2t_experiments/other_contexts/$i/output
 
-    nohup t2t-trainer \
+    t2t-trainer \
         --data_dir=$DATA_DIR \
         --problem=$PROBLEM \
         --model=$MODEL \
@@ -24,5 +25,6 @@ do
         --t2t_usr_dir=$USR_DIR \
         --train_steps=5000 \
         --eval_steps=50 \
-        --worker_gpu=4 &
+        --worker_gpu=4
+#    	--warm_start_from=$TRAIN_DIR
 done
