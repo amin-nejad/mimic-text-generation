@@ -2,7 +2,7 @@
 
 BASE=$HOME/project/text-generation # change this as necessary
 PREPROC=$BASE/data/preprocessed
-TEST_FILE=$PREPROC/src-test-8.txt
+TEST_FILE=$PREPROC/src-test.txt
 
 split -n l/4 $TEST_FILE $PREPROC/temp_
 for f in $PREPROC/temp_*; do mv $f $PREPROC/`basename $f `.txt; done;
