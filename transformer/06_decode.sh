@@ -21,7 +21,7 @@ DECODE_FILE_3=$PREPROC/temp_ad.txt
 
 BEAM_SIZE=4
 ALPHA=0.6
-DBS=4
+DBS=2
 EXTRA_LEN=50
 HPARAMS_OVERRIDE="max_length=10000,max_target_seq_length=512,max_input_seq_length=512"
 
