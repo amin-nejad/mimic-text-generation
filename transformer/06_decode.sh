@@ -10,18 +10,18 @@ for f in $PREPROC/temp_*; do mv $f $PREPROC/`basename $f `.txt; done;
 PROBLEM=mimic_discharge_summaries
 MODEL=transformer
 HPARAMS=transformer_base
-DATA_DIR=$BASE/data/t2t_experiments/full_context/data
-TRAIN_DIR=$BASE/data/t2t_experiments/full_context/output
-USR_DIR=$BASE/t2t
+DATA_DIR=$BASE/data/t2t_experiments/transformer/full_context/data
+TRAIN_DIR=$BASE/data/t2t_experiments/transformer/full_context/output
+USR_DIR=$BASE/transformer
 
 DECODE_FILE_0=$PREPROC/temp_aa.txt
 DECODE_FILE_1=$PREPROC/temp_ab.txt
 DECODE_FILE_2=$PREPROC/temp_ac.txt
 DECODE_FILE_3=$PREPROC/temp_ad.txt
 
-BEAM_SIZE=4
+BEAM_SIZE=3
 ALPHA=0.6
-DBS=2
+DBS=1
 EXTRA_LEN=50
 HPARAMS_OVERRIDE="max_length=10000,max_target_seq_length=512,max_input_seq_length=512"
 
