@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATA=$HOME/project/text-generation/data/gpt2
+DATA=$HOME/project/text-generation/data/gpt2/low_resource
 
 cd ./gpt-2
 

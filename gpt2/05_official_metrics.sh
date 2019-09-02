@@ -1,8 +1,8 @@
 #!/bin/bash
 
 BASE=$HOME/project/text-generation # change this as necessary
-PREPROC=$BASE/data/preprocessed
-TRAIN_DIR=$BASE/data/gpt2
+PREPROC=$BASE/data/preprocessed/low_resource
+TRAIN_DIR=$BASE/data/gpt2/low_resource
 
 mkdir $PREPROC/gold
 ln -s $PREPROC/tgt-test.txt $PREPROC/gold/tgt-test.A.001.txt

@@ -5,7 +5,7 @@ export CUDA_VISIBLE_DEVICES=0
 cd ./gpt-2
 
 MODEL='run1'
-DATA_DIR=../../data/gpt2/
+DATA_DIR=../../data/gpt2/low_resource
 INPUT_FILE=$DATA_DIR/test-input-text.txt
 OUTPUT_FILE=$DATA_DIR/test-output-text.txt
 TOP_K=0
