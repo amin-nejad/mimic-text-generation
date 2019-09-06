@@ -1,8 +1,8 @@
 #!/bin/bash
 
 BASE=$HOME/project/text-generation # change this as necessary
-PREPROC=$BASE/data/preprocessed
-TRAIN_DIR=$BASE/data/t2t_experiments/full_context/output
+PREPROC=$BASE/data/preprocessed/low_resource
+TRAIN_DIR=$BASE/data/t2t_experiments/transformer/low_resource/full_context/output
 
 mkdir $PREPROC/gold
 ln -s $PREPROC/tgt-test.txt $PREPROC/gold/tgt-test.A.001.txt
@@ -12,7 +12,7 @@ PREDICTION=$TRAIN_DIR/transformer_decoded/tgt-test.001.txt
 
 rm $PREPROC/temp_*
 cat $TRAIN_DIR/tgt-decoded-0.txt $TRAIN_DIR/tgt-decoded-1.txt $TRAIN_DIR/tgt-decoded-2.txt $TRAIN_DIR/tgt-decoded-3.txt > $PREDICTION
-rm $TRAIN_DIR/tgt-decoded*
+#rm $TRAIN_DIR/tgt-decoded*
 
 # Remove blank lines
 

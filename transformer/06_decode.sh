@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASE=$HOME/project/text-generation # change this as necessary
-PREPROC=$BASE/data/preprocessed
+PREPROC=$BASE/data/preprocessed/low_resource
 TEST_FILE=$PREPROC/src-test.txt
 
 split -n l/4 $TEST_FILE $PREPROC/temp_
@@ -10,8 +10,8 @@ for f in $PREPROC/temp_*; do mv $f $PREPROC/`basename $f `.txt; done;
 PROBLEM=mimic_discharge_summaries
 MODEL=transformer
 HPARAMS=transformer_base
-DATA_DIR=$BASE/data/t2t_experiments/transformer/full_context/data
-TRAIN_DIR=$BASE/data/t2t_experiments/transformer/full_context/output
+DATA_DIR=$BASE/data/t2t_experiments/transformer/low_resource/full_context/data
+TRAIN_DIR=$BASE/data/t2t_experiments/transformer/low_resource/full_context/output
 USR_DIR=$BASE/transformer
 
 DECODE_FILE_0=$PREPROC/temp_aa.txt
@@ -19,9 +19,9 @@ DECODE_FILE_1=$PREPROC/temp_ab.txt
 DECODE_FILE_2=$PREPROC/temp_ac.txt
 DECODE_FILE_3=$PREPROC/temp_ad.txt
 
-BEAM_SIZE=3
+BEAM_SIZE=4
 ALPHA=0.6
-DBS=1
+DBS=4
 EXTRA_LEN=50
 HPARAMS_OVERRIDE="max_length=10000,max_target_seq_length=512,max_input_seq_length=512"
 
