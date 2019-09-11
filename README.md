@@ -1,6 +1,8 @@
 # mimic-text-generation
 
-This repository contains all our text generation models. Follow the steps below:
+This repository contains the code to recreate all our text generation models. This is part of my Master's thesis researching transformer-based Natural Language Generation methods for NLP data augmentation, specifically in the medical field. We use the MIMIC-III dataset.
+
+Follow the steps below:
 
 
 1. Install the environment
